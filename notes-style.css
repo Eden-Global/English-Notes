@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+:root{
+    --bg-color: #FDECF0;
+    --text-color: #2C2C2C;
+    --button-color: #FF4444;
+    --button-hover-color: #FF6666;
+    --card-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+}
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #E5E5E5;
+}
+.back-btn {
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--card-shadow);
+}
+.back-btn:hover {
+    background-color: var(--button-hover-color);
+    transform: translateY(-2px);
+}
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+#notes-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+.note-item {
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.note-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+.note-thumbnail {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background-color: #f0f0f0;
+    position: relative;
+}
+.note-content {
+    padding: 16px;
+}
+.note-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.3;
+    color: var(--text-color);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.download-button {
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+}
+.download-button:hover {
+    background-color: var(--button-hover-color);
+    transform: scale(1.02);
+}
+.download-button:active {
+    transform: scale(0.98);
+}
+.no-notes {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 3rem;
+    grid-column: 1 / -1;
+}
+@media (max-width: 768px) {
+    #notes-list {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1rem;
+    }
+    .header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+}
